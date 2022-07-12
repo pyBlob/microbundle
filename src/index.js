@@ -395,7 +395,7 @@ function createConfig(options, entry, format, writeMeta) {
 			? () => resolve(options.cwd, rawMinifyValue)
 			: () => resolve(options.cwd, 'mangle.json');
 
-	const useTypescript = extname(entry) === '.ts' || extname(entry) === '.tsx';
+	const useTypescript = extname(entry) === '.ts' || extname(entry) === '.tsx' || extname(entry) === '.mts';
 	const emitDeclaration =
 		options.generateTypes == null
 			? !!(pkg.types || pkg.typings)
